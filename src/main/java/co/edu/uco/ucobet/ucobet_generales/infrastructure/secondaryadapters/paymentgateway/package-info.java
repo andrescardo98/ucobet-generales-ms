@@ -1,0 +1,1 @@
+package co.edu.uco.ucobet.ucobet_generales.infrastructure.secondaryadapters.paymentgateway;
