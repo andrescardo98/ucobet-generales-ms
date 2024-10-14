@@ -6,7 +6,7 @@ public class CityIdDoesExistException extends RuleUcobetException {
 
 	private static final long serialVersionUID = 1L;
 	
-	public CityIdDoesExistException(String userMessage) {
+	public CityIdDoesExistException(final String userMessage) {
 		super(userMessage, userMessage, new Exception());
 	}
 	
