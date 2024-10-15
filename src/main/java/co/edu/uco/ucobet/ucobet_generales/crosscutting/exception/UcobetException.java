@@ -1,4 +1,4 @@
-package co.edu.uco.ucobet.ucobet_generales.domain.city.exception;
+package co.edu.uco.ucobet.ucobet_generales.crosscutting.exception;
 
 import co.edu.uco.ucobet.ucobet_generales.crosscutting.helpers.ObjectHelper;
 import co.edu.uco.ucobet.ucobet_generales.crosscutting.helpers.TextHelper;
