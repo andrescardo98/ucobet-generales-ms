@@ -1,12 +1,10 @@
 package co.edu.uco.ucobet.ucobet_generales.application.usecase.city;
 
-import org.springframework.stereotype.Service;
+import java.util.UUID;
 
 import co.edu.uco.ucobet.ucobet_generales.application.usecase.RulesValidator;
-import co.edu.uco.ucobet.ucobet_generales.domain.city.CityDomain;
 
-@Service
-public interface RegisterNewCityStateRulesValidator extends RulesValidator<CityDomain> {
+public interface RegisterNewCityStateRulesValidator extends RulesValidator<UUID> {
 	
 	
 

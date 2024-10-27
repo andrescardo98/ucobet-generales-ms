@@ -1,6 +1,6 @@
 package co.edu.uco.ucobet.ucobet_generales.crosscutting.exception;
 
-import co.edu.uco.ucobet.ucobet_generales.domain.city.exception.enums.Layer;
+import co.edu.uco.ucobet.ucobet_generales.crosscutting.exception.enums.Layer;
 
 public class RuleUcobetException extends UcobetException{
 	

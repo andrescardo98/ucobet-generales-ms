@@ -5,12 +5,6 @@ import co.edu.uco.ucobet.ucobet_generales.domain.city.exception.CityNameFormatIs
 import co.edu.uco.ucobet.ucobet_generales.domain.city.rules.CityNameFormatIsValidRule;
 
 public class CityNameFormatIsValidRuleImpl implements CityNameFormatIsValidRule{
-	
-	private TextHelper textHelper;
-	
-	public CityNameFormatIsValidRuleImpl(final TextHelper textHelper) {
-		this.textHelper = textHelper;
-	}
 
 	@Override
 	public void validate(String data) {

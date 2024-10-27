@@ -58,4 +58,4 @@ public final class CountryEntity {
 		this.name = TextHelper.applyTrim(name);
 	}
 
-	}
+}

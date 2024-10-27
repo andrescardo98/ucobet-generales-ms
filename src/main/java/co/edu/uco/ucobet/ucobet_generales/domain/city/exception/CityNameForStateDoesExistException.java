@@ -8,7 +8,6 @@ public class CityNameForStateDoesExistException extends RuleUcobetException {
 
 	public CityNameForStateDoesExistException(final String userMessage) {
 		super(userMessage, userMessage, new Exception());
-		// TODO Auto-generated constructor stub
 	}
 	
 	public static final CityNameForStateDoesExistException create() {

@@ -14,8 +14,8 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "City")
-public final class CityEntity{
-	
+public final class RegisterNewCityEntity {
+
 	@Id
 	@Column(name = "id")
 	private UUID id;
@@ -24,59 +24,57 @@ public final class CityEntity{
 	private String name;
 	
 	@ManyToOne
-	@JoinColumn(name = "state_id")
+	@JoinColumn(name = "state")
 	private StateEntity state;
 	
-	public CityEntity() {
+	public RegisterNewCityEntity() {
 		setId(UUIDHelper.getDefault());
 		setName(TextHelper.EMPTY);
 		setState(StateEntity.create());
 	}
-	
-	public CityEntity(UUID id, String name, StateEntity state) {
+
+	public RegisterNewCityEntity(final UUID id, final String name, final StateEntity state) {
 		setId(id);
 		setName(name);
 		setState(state);
 	}
 	
-	public static final CityEntity create() {
-		return new CityEntity();
+	public static final RegisterNewCityEntity create() {
+		return new RegisterNewCityEntity();
 	}
 	
-	public static final CityEntity create(final UUID id, final String name, final StateEntity state) {
-		return new CityEntity(id, name, state);
+	public static final RegisterNewCityEntity create(final UUID id, final String name, final StateEntity state) {
+		return new RegisterNewCityEntity(id, name, state);
 	}
 	
-	public static final CityEntity create(final UUID id) {
-		return new CityEntity(id, TextHelper.EMPTY, StateEntity.create());
+	public static final RegisterNewCityEntity create(final UUID id) {
+		return new RegisterNewCityEntity(id, TextHelper.EMPTY, StateEntity.create());
 	}
 
 	public UUID getId() {
 		return id;
 	}
 
-	public CityEntity setId(UUID id) {
+	public void setId(UUID id) {
 		this.id = UUIDHelper.getDefault(id, UUIDHelper.getDefault());
-		return this;
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public CityEntity setName(String name) {
+	public void setName(String name) {
 		this.name = TextHelper.applyTrim(name);
-		return this;
 	}
 
 	public StateEntity getState() {
 		return state;
 	}
 
-	public CityEntity setState(StateEntity state) {
+	public void setState(StateEntity state) {
 		this.state = ObjectHelper.getDefault(state, StateEntity.create());
-		return this;
 	}
 	
 	
-	}
+	
+}

@@ -1,8 +1,11 @@
 package co.edu.uco.ucobet.ucobet_generales.application.usecase.city.impl;
 
+import org.springframework.stereotype.Service;
+
 import co.edu.uco.ucobet.ucobet_generales.application.usecase.city.RegisterNewCityRulesValidator;
 import co.edu.uco.ucobet.ucobet_generales.domain.city.CityDomain;
 
+@Service
 public final class RegisterNewCityRulesValidatorImpl implements RegisterNewCityRulesValidator {
 
 	private RegisterNewCityIdRulesValidatorImpl registerNewCityIdRulesValidatorImpl;
@@ -23,7 +26,7 @@ public final class RegisterNewCityRulesValidatorImpl implements RegisterNewCityR
 	public void validate(final CityDomain data) {
 		registerNewCityIdRulesValidatorImpl.validate(data);
 		registerNewCityNameRulesValidatorImpl.validate(data);
-		registerNewCityStateRulesValidatorImpl.validate(data);
+		registerNewCityStateRulesValidatorImpl.validate(data.getId());
 	}
 
 

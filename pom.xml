@@ -59,18 +59,9 @@
     		<version>1.5.5.Final</version>
     		<scope>provided</scope>
 		</dependency>
-		
-		<!-- https://mvnrepository.com/artifact/com.azure/azure-security-keyvault-secrets -->
 		<dependency>
-		    <groupId>com.azure</groupId>
-		    <artifactId>azure-security-keyvault-secrets</artifactId>
-		    <version>4.7.1</version>
-		</dependency>
-		
-		<dependency>
-		    <groupId>com.azure</groupId>
-		    <artifactId>azure-identity</artifactId>
-		    <version>1.6.0</version> <!-- Usa la última versión disponible -->
+		    <groupId>com.azure.spring</groupId>
+		    <artifactId>spring-cloud-azure-starter-keyvault</artifactId>
 		</dependency>
 		
 		<dependency>
@@ -84,12 +75,12 @@
 	<dependencyManagement>
 	    <dependencies>
 	        <dependency>
-	            <groupId>org.springframework.cloud</groupId>
-	            <artifactId>spring-cloud-dependencies</artifactId>
-	            <version>Hoxton.SR12</version>
-	            <type>pom</type>
-	            <scope>import</scope>
-	        </dependency>
+      			<groupId>com.azure.spring</groupId>
+      			<artifactId>spring-cloud-azure-dependencies</artifactId>
+      			<version>5.17.1</version>
+      			<type>pom</type>
+      			<scope>import</scope>
+    		</dependency>
 	    </dependencies>
 	</dependencyManagement>
 

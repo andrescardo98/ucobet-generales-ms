@@ -2,6 +2,9 @@ package co.edu.uco.ucobet.ucobet_generales.infrastructure.secondaryadapters.data
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
+
+import org.springframework.stereotype.Repository;
 
 import co.edu.uco.ucobet.ucobet_generales.application.secondaryports.entity.CityEntity;
 import co.edu.uco.ucobet.ucobet_generales.application.secondaryports.repository.CityRepositoryCustom;
@@ -12,6 +15,7 @@ import co.edu.uco.ucobet.ucobet_generales.crosscutting.helpers.UUIDHelper;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.criteria.Predicate;
 
+@Repository
 public final class CityRepositoryCustomImpl implements CityRepositoryCustom{
 	
 	private EntityManager entityManager;
@@ -49,6 +53,40 @@ public final class CityRepositoryCustomImpl implements CityRepositoryCustom{
 			
 		} catch (final Exception exception) {
 			throw RepositoryUcobetException.create(null, null, exception);
+		}
+	}
+
+	@Override
+	public boolean isCityBeingUsed(UUID cityId) {
+		try {
+			var criteriaBuilder = entityManager.getCriteriaBuilder();
+			var query = criteriaBuilder.createQuery(Long.class);
+			var root = query.from(CityEntity.class);
+			
+			query.select(criteriaBuilder.count(root)).where(criteriaBuilder.equal(root.get("id"), cityId));
+			Long count = entityManager.createQuery(query).getSingleResult();
+			return count > 0;
+			
+		} catch (final Exception exception) {
+			throw RepositoryUcobetException.create("Se ha presentado un error al verificar si la ciudad está siendo utilizada", null, exception);
+		}
+	}
+
+	@Override
+	public boolean existsByNameAndState(String name, String state) {
+		try {
+			var criteriaBuilder = entityManager.getCriteriaBuilder();
+			var query = criteriaBuilder.createQuery(Long.class);
+			var root = query.from(CityEntity.class);
+			
+			query.select(criteriaBuilder.count(root)).where(criteriaBuilder.and(criteriaBuilder.equal(root.get("name"), name), criteriaBuilder.equal(root.get("state"), state)));
+			
+			Long count = entityManager.createQuery(query).getSingleResult();
+			
+			return count > 0; 
+			
+		} catch (final Exception exception) {
+			throw RepositoryUcobetException.create("Se ha presentado un error al momento de verificar si existe una ciudad con el nombre y el estado ingresado", null, exception);
 		}
 	}
 

@@ -1,8 +1,8 @@
 package co.edu.uco.ucobet.ucobet_generales.crosscutting.exception;
 
+import co.edu.uco.ucobet.ucobet_generales.crosscutting.exception.enums.Layer;
 import co.edu.uco.ucobet.ucobet_generales.crosscutting.helpers.ObjectHelper;
 import co.edu.uco.ucobet.ucobet_generales.crosscutting.helpers.TextHelper;
-import co.edu.uco.ucobet.ucobet_generales.domain.city.exception.enums.Layer;
 
 public class UcobetException extends RuntimeException {
 
