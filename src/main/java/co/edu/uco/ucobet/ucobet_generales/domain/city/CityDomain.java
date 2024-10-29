@@ -5,13 +5,12 @@ import java.util.UUID;
 import co.edu.uco.ucobet.ucobet_generales.domain.Domain;
 import co.edu.uco.ucobet.ucobet_generales.domain.state.StateDomain;
 
-public final class CityDomain extends Domain {
+public class CityDomain extends Domain {
 	
 	private String name;
 	private StateDomain state;
-	
-	
-	public CityDomain(final UUID id, final String name, final StateDomain state) {
+
+	public CityDomain(final UUID id, final String name,final StateDomain state) {
 		super(id);
 		setName(name);
 		setState(state);
@@ -21,19 +20,17 @@ public final class CityDomain extends Domain {
 		return name;
 	}
 
-
-	private final void setName(final String name) {
+	private final void setName(String name) {
 		this.name = name;
 	}
-
 
 	public final StateDomain getState() {
 		return state;
 	}
 
-
-	private final void setState(final StateDomain state) {
+	private final void setState(StateDomain state) {
 		this.state = state;
 	}
+
 
 }

@@ -1,18 +1,22 @@
 package co.edu.uco.ucobet.ucobet_generales.domain.city.rules.impl;
 
-import co.edu.uco.ucobet.ucobet_generales.crosscutting.helpers.TextHelper;
-import co.edu.uco.ucobet.ucobet_generales.domain.city.exception.CityNameForStateDoesExistException;
-import co.edu.uco.ucobet.ucobet_generales.domain.city.rules.CityStateDoesExistRule;
-import co.edu.uco.ucobet.ucobet_generales.domain.state.StateDomain;
+import org.springframework.stereotype.Service;
 
-public class CityNameForStateDoesNotExistRuleImpl implements CityStateDoesExistRule{
+import co.edu.uco.ucobet.ucobet_generales.application.secondaryports.repository.CityRepository;
+import co.edu.uco.ucobet.ucobet_generales.domain.city.CityDomain;
+import co.edu.uco.ucobet.ucobet_generales.domain.city.rules.CityNameForStateDoesNotExistRule;
+
+@Service
+public class CityNameForStateDoesNotExistRuleImpl implements CityNameForStateDoesNotExistRule {
+
+	private CityRepository cityRepository;
+
+	public CityNameForStateDoesNotExistRuleImpl(final CityRepository cityRepository) {
+		this.cityRepository = cityRepository;
+	}
 
 	@Override
-	public void validate(final StateDomain data) {
-		if (!TextHelper.contieneSoloLetrasDigitosEspacios(data.getName())) {
-			throw CityNameForStateDoesExistException.create();
-		}
-		
+	public void validate(CityDomain data) {
 	}
 
 }

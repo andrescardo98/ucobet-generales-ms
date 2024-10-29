@@ -13,35 +13,39 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "City")
+@Table (name = "City")
 public final class RegisterNewCityEntity {
-
+	
 	@Id
 	@Column(name = "id")
 	private UUID id;
 	
-	@Column(name = "name")
+	@Column (name = "name")
 	private String name;
 	
-	@ManyToOne
-	@JoinColumn(name = "state")
-	private StateEntity state;
 	
-	public RegisterNewCityEntity() {
+	@ManyToOne
+	@JoinColumn(name= "state")
+	private StateEntity state;
+
+
+	RegisterNewCityEntity() {
 		setId(UUIDHelper.getDefault());
 		setName(TextHelper.EMPTY);
 		setState(StateEntity.create());
 	}
 
-	public RegisterNewCityEntity(final UUID id, final String name, final StateEntity state) {
+
+	public RegisterNewCityEntity(UUID id, String name, StateEntity state) {
 		setId(id);
 		setName(name);
 		setState(state);
 	}
 	
-	public static final RegisterNewCityEntity create() {
+	static final RegisterNewCityEntity create() {
 		return new RegisterNewCityEntity();
 	}
+	
 	
 	public static final RegisterNewCityEntity create(final UUID id, final String name, final StateEntity state) {
 		return new RegisterNewCityEntity(id, name, state);
@@ -51,30 +55,35 @@ public final class RegisterNewCityEntity {
 		return new RegisterNewCityEntity(id, TextHelper.EMPTY, StateEntity.create());
 	}
 
+
 	public UUID getId() {
 		return id;
 	}
 
-	public void setId(UUID id) {
+
+	public void setId(final UUID id) {
 		this.id = UUIDHelper.getDefault(id, UUIDHelper.getDefault());
 	}
+
 
 	public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
+
+	public void setName(final String name) {
 		this.name = TextHelper.applyTrim(name);
 	}
+
 
 	public StateEntity getState() {
 		return state;
 	}
 
-	public void setState(StateEntity state) {
+
+	public void setState(final StateEntity state) {
 		this.state = ObjectHelper.getDefault(state, StateEntity.create());
 	}
 	
-	
-	
+
 }

@@ -12,7 +12,7 @@ public final class RegisterNewCityIdRulesValidatorImpl implements RegisterNewCit
 
 	private CityIdDoesNotExistRule cityIdDoesNotExistRule;
 
-	public RegisterNewCityIdRulesValidatorImpl(CityIdDoesNotExistRule cityIdDoesNotExistRule) {
+	public RegisterNewCityIdRulesValidatorImpl(final CityIdDoesNotExistRule cityIdDoesNotExistRule) {
 		super();
 		this.cityIdDoesNotExistRule = cityIdDoesNotExistRule;
 	}
@@ -23,7 +23,7 @@ public final class RegisterNewCityIdRulesValidatorImpl implements RegisterNewCit
 		try {
 			data.generateId();
 			cityIdDoesNotExistRule.validate(data.getId());
-		} catch (final CityIdDoesExistException e) {
+		} catch (final CityIdDoesExistException exception) {
 			validate(data);
 		}
 	}

@@ -1,6 +1,9 @@
 package co.edu.uco.ucobet.ucobet_generales.application.primaryports.interactor;
 
-public interface InteractorWithoutReturn<T> {
+import org.springframework.stereotype.Service;
 
+@Service
+public interface InteractorWithoutReturn <T>{
 	void execute(T data);
+
 }

@@ -14,8 +14,8 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "State")
-public final class StateEntity{
-	
+public final class StateEntity {
+
 	@Id
 	@Column(name = "id")
 	private UUID id;
@@ -75,7 +75,5 @@ public final class StateEntity{
 	public void setCountry(final CountryEntity country) {
 		this.country = ObjectHelper.getDefault(country, CountryEntity.create());
 	}
-
-	
 
 }

@@ -18,8 +18,9 @@ public final class RegisterNewCityNameRulesValidatorImpl implements RegisterNewC
 	private CityNameIsNotEmptyRule cityNameIsNotEmptyRule;
 	private CityNameIsNotNullRule cityNameIsNotNullRule;
 	private CityNameForStateDoesNotExistRule cityNameForStateDoesNotExistRule;
-	
-	public RegisterNewCityNameRulesValidatorImpl(final CityNameLengthIsValidRule cityNameLengthIsValidRule, final CityNameFormatIsValidRule cityNameFormatIsValidRule,
+
+	public RegisterNewCityNameRulesValidatorImpl(final CityNameLengthIsValidRule cityNameLengthIsValidRule,
+			final CityNameFormatIsValidRule cityNameFormatIsValidRule,
 			final CityNameIsNotEmptyRule cityNameIsNotEmptyRule, final CityNameIsNotNullRule cityNameIsNotNullRule,
 			final CityNameForStateDoesNotExistRule cityNameForStateDoesNotExistRule) {
 		super();

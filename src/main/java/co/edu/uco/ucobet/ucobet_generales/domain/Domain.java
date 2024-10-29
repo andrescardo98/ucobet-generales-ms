@@ -8,31 +8,30 @@ public class Domain {
 	
 	private UUID id;
 	private String idAsString;
-
-
+	
 	protected Domain (final UUID id) {
 		setId(id);
+		
+	}
+	
+	protected Domain (final String id) {
+		setId(id);
+		
 	}
 
 	public final UUID getId() {
-		return UUIDHelper.isDefault(id) ? UUIDHelper.convertToUUID(idAsString):id;
+		return UUIDHelper.isDefault(id)? UUIDHelper.convertToUUID(idAsString):id;
 	}
 
-	private final void setId(UUID id) {
+	public final void setId(final UUID id) {
 		this.id = id;
 	}
-	
-	
-	public String getIdAsString() {
-		return idAsString;
-	}
 
-	public void setIdAsString(String idAsString) {
-		this.idAsString = idAsString;
+	public final void setId(final String id) {
+		this.idAsString = id;
 	}
-	
 	public void generateId() {
 		this.id = UUIDHelper.generate();
 	}
-
 }
+

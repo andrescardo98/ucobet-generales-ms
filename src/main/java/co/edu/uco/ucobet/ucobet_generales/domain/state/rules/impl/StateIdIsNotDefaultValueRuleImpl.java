@@ -9,11 +9,11 @@ import co.edu.uco.ucobet.ucobet_generales.domain.state.exception.StateIdIsDefaul
 import co.edu.uco.ucobet.ucobet_generales.domain.state.rules.StateIdIsNotDefaultValueRule;
 
 @Service
-public class StateIdIsNotDefaultValueRuleImpl implements StateIdIsNotDefaultValueRule{
-
+public class StateIdIsNotDefaultValueRuleImpl implements StateIdIsNotDefaultValueRule {
+	
 	@Override
 	public void validate(UUID data) {
-		if (UUIDHelper.isDefault(data)) {
+		if(UUIDHelper.isDefault(data)) {
 			throw StateIdIsDefaultValueException.create();
 		}
 		

@@ -16,34 +16,36 @@ public final class CountryEntity {
 	@Id
 	@Column(name = "id")
 	private UUID id;
-	
+
 	@Column(name = "name")
 	private String name;
 
-	public UUID getId() {
-		return id;
-	}
-	
 	CountryEntity() {
 		setId(UUIDHelper.getDefault());
 		setName(TextHelper.EMPTY);
 	}
-	
+
 	public CountryEntity(final UUID id, final String name) {
 		setId(id);
 		setName(name);
 	}
 	
-	public static final CountryEntity create() {
+	static final CountryEntity create() {
 		return new CountryEntity();
 	}
 	
-	public static final CountryEntity create(final UUID id, final String name) {
+	
+	static final CountryEntity create(final UUID id, final String name) {
 		return new CountryEntity(id, name);
 	}
 	
-	public static final CountryEntity create(final UUID id) {
+	static final CountryEntity create(final UUID id) {
 		return new CountryEntity(id, TextHelper.EMPTY);
+	}
+
+	
+	public UUID getId() {
+		return id;
 	}
 
 	public void setId(final UUID id) {
@@ -59,3 +61,4 @@ public final class CountryEntity {
 	}
 
 }
+

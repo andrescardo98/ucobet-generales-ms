@@ -9,7 +9,7 @@ import co.edu.uco.ucobet.ucobet_generales.domain.city.exception.CityStateDoesNot
 import co.edu.uco.ucobet.ucobet_generales.domain.state.rules.StateDoesExistRule;
 
 @Service
-public class StateDoesExistsRuleImpl implements StateDoesExistRule{
+public class StateDoesExistsRuleImpl implements StateDoesExistRule {
 
 	private final StateRepository stateRepository;
 	
@@ -17,9 +17,10 @@ public class StateDoesExistsRuleImpl implements StateDoesExistRule{
 		this.stateRepository = stateRepository;
 	}
 	
+	
 	@Override
 	public void validate(UUID data) {
-		if (!stateRepository.existsById(data)) {
+		if(!stateRepository.existsById(data)) {
 			throw CityStateDoesNotExistException.create();
 		}
 		

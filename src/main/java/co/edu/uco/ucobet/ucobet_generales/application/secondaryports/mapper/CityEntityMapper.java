@@ -10,16 +10,15 @@ import co.edu.uco.ucobet.ucobet_generales.domain.city.CityDomain;
 
 @Mapper
 public interface CityEntityMapper {
-	
-	CityEntityMapper INSTANCE = Mappers.getMapper(CityEntityMapper.class );
-	
-	CityEntity toEntity(CityDomain cityDomain);
-	
-	CityDomain toDomain(CityEntity cityEntity);
-	
-	List<CityEntity> toEntityList(List<CityDomain> domainList);
-	
-	List<CityDomain> toDomainList(List<CityEntity> entityList);
-	
+
+	CityEntityMapper INSTANCE = Mappers.getMapper(CityEntityMapper.class);
+
+	CityDomain entityToDomain(CityEntity entity);
+
+	CityEntity domainToEntity(CityDomain domain);
+
+	List<CityEntity> domainToEntityCollection(List<CityDomain> domainCollection);
+
+	List<CityDomain> entityToDomainCollection(List<CityEntity> entityCollection);
 
 }

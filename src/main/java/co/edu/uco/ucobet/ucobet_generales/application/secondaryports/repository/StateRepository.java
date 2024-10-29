@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import co.edu.uco.ucobet.ucobet_generales.application.secondaryports.entity.StateEntity;
 
+
 @Repository
 public interface StateRepository extends JpaRepository<StateEntity, UUID> {
 

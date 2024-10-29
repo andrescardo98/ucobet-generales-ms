@@ -10,15 +10,13 @@ import co.edu.uco.ucobet.ucobet_generales.domain.state.StateDomain;
 @Mapper
 public interface StateEntityMapper {
 	
-	StateEntityMapper INSTANCE = Mappers.getMapper(StateEntityMapper.class );
+	StateEntityMapper INSTANCE = Mappers.getMapper(StateEntityMapper.class);
 	
-	StateEntity toEntity(StateDomain cityDomain);
+	StateDomain entityToDomain(StateEntity entity);
+	StateEntity domainToEntity(StateDomain domain);
 	
-	StateDomain toDomain(StateEntity cityEntity);
-	
-	List<StateEntity> toEntityList(List<StateDomain> domainList);
-	
-	List<StateDomain> toDomainList(List<StateEntity> entityList);
-	
+	List<StateEntity> domainToEntityCollection(List<StateDomain> domainCollection);
 
+	List<StateDomain> entityToDomainCollection(List<StateEntity> entityCollection);
+	
 }

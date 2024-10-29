@@ -2,15 +2,15 @@ package co.edu.uco.ucobet.ucobet_generales.crosscutting.exception;
 
 import co.edu.uco.ucobet.ucobet_generales.crosscutting.exception.enums.Layer;
 
-public class ApplicationUcobetException extends UcobetException{
-	
+public class ApplicationUcobetException extends UcobetException {
+
 	private static final long serialVersionUID = 1L;
 
-	public ApplicationUcobetException(String userMessage, String technicalMessage, Exception rootException) {
-		super(userMessage, technicalMessage, rootException, Layer.APPLICATION);
+	public ApplicationUcobetException(final String userMessage, final String technicalMessage, final Exception rootException){
+		super(userMessage, technicalMessage, rootException, Layer.DOMAIN);
 	}
 	
-	public static final ApplicationUcobetException create(String userMessage, String technicalMessage, Exception rootException) {
+	public static final ApplicationUcobetException create(final String userMessage, final String technicalMessage, final Exception rootException) {
 		return new ApplicationUcobetException(userMessage, technicalMessage, rootException);
 	}
 	
