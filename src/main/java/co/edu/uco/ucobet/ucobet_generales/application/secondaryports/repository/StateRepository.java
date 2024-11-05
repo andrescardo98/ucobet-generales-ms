@@ -9,6 +9,6 @@ import co.edu.uco.ucobet.ucobet_generales.application.secondaryports.entity.Stat
 
 
 @Repository
-public interface StateRepository extends JpaRepository<StateEntity, UUID> {
+public interface StateRepository extends JpaRepository<StateEntity, UUID>, StateRepositoryCustom {
 
 }

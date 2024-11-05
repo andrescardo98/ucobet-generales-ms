@@ -1,6 +1,8 @@
 package co.edu.uco.ucobet.ucobet_generales.domain.city.exception;
 
 import co.edu.uco.ucobet.ucobet_generales.crosscutting.exception.RuleUcobetException;
+import co.edu.uco.ucobet.ucobet_generales.crosscutting.messages.MessageCatalog;
+import co.edu.uco.ucobet.ucobet_generales.crosscutting.messages.enumerator.MessageCode;
 
 public class CityNameLengthIsNotValidException extends RuleUcobetException {
 
@@ -11,8 +13,7 @@ public class CityNameLengthIsNotValidException extends RuleUcobetException {
 	}
 	
 	public static final CityNameLengthIsNotValidException create() {
-		var userMessage = "La longitud del nombre de la ciudad supera la cantidad de caracteres permitidos, "
-				+ "ingrese un nombre de más de 50 caracteres.";
+		var userMessage = MessageCatalog.getMessageContent(MessageCode.M0000000014);
 		return new CityNameLengthIsNotValidException(userMessage);
 	}
 

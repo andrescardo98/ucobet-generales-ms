@@ -2,6 +2,7 @@ package co.edu.uco.ucobet.ucobet_generales.application.primaryports.mapper;
 
 import java.util.List;
 
+import co.edu.uco.ucobet.ucobet_generales.application.primaryports.dto.RecoverStateDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -14,12 +15,12 @@ public interface StateDTOMapper {
 
 	StateDTOMapper INSTANCE = Mappers.getMapper(StateDTOMapper.class);
 
-	StateDomain dtoToDomain(StateDTO dto);
+	StateDomain dtoToDomain(RecoverStateDTO dto);
 
-	StateDTO domainToDto(StateDomain domain);
+	RecoverStateDTO domainToDto(StateDomain domain);
 
-	List<StateDTO> domainToDtoCollection(List<StateDomain> domainCollection);
+	List<RecoverStateDTO> domainToDtoCollection(List<StateDomain> domainCollection);
 
-	List<StateDomain> dtoToDomainCollection(List<StateDTO> entityCollection);
+	List<StateDomain> dtoToDomainCollection(List<RecoverStateDTO> entityCollection);
 
 }
