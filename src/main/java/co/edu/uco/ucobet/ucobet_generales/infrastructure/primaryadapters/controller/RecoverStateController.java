@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/general/api/v1/states")
-@CrossOrigin(origins = "http:localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 public class RecoverStateController {
 
     private final RecoverStateInteractor recoverStateInteractor;

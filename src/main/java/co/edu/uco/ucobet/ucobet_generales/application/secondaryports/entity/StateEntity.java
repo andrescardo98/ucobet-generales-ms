@@ -23,7 +23,7 @@ public final class StateEntity {
 	private String name;
 
 	@ManyToOne
-	@JoinColumn(name = "conutry")
+	@JoinColumn(name = "country")
 	private CountryEntity country;
 
 	StateEntity() {

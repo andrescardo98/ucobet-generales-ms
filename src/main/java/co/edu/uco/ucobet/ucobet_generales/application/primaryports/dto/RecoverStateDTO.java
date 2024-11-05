@@ -35,7 +35,7 @@ public class RecoverStateDTO {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(final UUID id) {
         this.id = UUIDHelper.getDefault(id, UUIDHelper.getDefault());
     }
 
@@ -43,7 +43,7 @@ public class RecoverStateDTO {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = TextHelper.applyTrim(name);
     }
 
@@ -51,7 +51,7 @@ public class RecoverStateDTO {
         return countryDTO;
     }
 
-    public void setCountryDTO(CountryDTO countryDTO) {
+    public void setCountryDTO(final CountryDTO countryDTO) {
         this.countryDTO = countryDTO;
     }
 }

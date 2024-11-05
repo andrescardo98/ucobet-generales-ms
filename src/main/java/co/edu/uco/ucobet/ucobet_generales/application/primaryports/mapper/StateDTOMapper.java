@@ -6,7 +6,6 @@ import co.edu.uco.ucobet.ucobet_generales.application.primaryports.dto.RecoverSt
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-import co.edu.uco.ucobet.ucobet_generales.application.primaryports.dto.StateDTO;
 import co.edu.uco.ucobet.ucobet_generales.domain.state.StateDomain;
 
 @Mapper

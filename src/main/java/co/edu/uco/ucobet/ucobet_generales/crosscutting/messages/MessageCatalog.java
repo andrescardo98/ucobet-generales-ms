@@ -14,7 +14,7 @@ public class MessageCatalog {
     private static final Map<MessageCode, Message> MESSAGES = new HashMap<>();
 
     static {
-
+        loadMessages();
     }
 
     private static final void loadMessages(){
@@ -86,6 +86,22 @@ public class MessageCatalog {
 
         addMessage(Message.create(MessageCode.M0000000022, MessageType.TECHNICAL, MessageCategory.ERROR,
                 "Se presento un problema tratando de llevar a cabo la consultar del estado"));
+
+        addMessage(Message.create(MessageCode.M0000000023, MessageType.TECHNICAL, MessageCategory.ERROR,
+                "Se presento un problema tratando de enviar una notificación al correo electrónico."));
+
+        addMessage(Message.create(MessageCode.M0000000024, MessageType.TECHNICAL, MessageCategory.ERROR,
+                "UCOBET - NUEVA CIUDAD CREADA"));
+
+        addMessage(Message.create(MessageCode.M0000000025, MessageType.TECHNICAL, MessageCategory.ERROR,
+                "NUEVA CIUDAD CREADA. Se ha creado la ciudad: "));
+
+        addMessage(Message.create(MessageCode.M0000000026, MessageType.TECHNICAL, MessageCategory.ERROR,
+                "Email enviado - Status Code: "));
+
+        addMessage(Message.create(MessageCode.M0000000027, MessageType.TECHNICAL, MessageCategory.ERROR,
+                "Error al enviar email: "));
+
 
     }
 
