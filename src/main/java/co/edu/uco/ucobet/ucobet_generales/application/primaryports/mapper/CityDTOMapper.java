@@ -9,7 +9,6 @@ import co.edu.uco.ucobet.ucobet_generales.application.primaryports.dto.CityDTO;
 import co.edu.uco.ucobet.ucobet_generales.domain.city.CityDomain;
 
 @Mapper
-
 public interface CityDTOMapper {
 
 	CityDTOMapper INSTANCE = Mappers.getMapper(CityDTOMapper.class);

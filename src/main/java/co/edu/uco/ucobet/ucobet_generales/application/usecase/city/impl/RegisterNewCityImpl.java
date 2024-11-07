@@ -1,6 +1,5 @@
 package co.edu.uco.ucobet.ucobet_generales.application.usecase.city.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import co.edu.uco.ucobet.ucobet_generales.application.secondaryports.entity.CityEntity;
@@ -16,9 +15,8 @@ public final class RegisterNewCityImpl implements RegisterNewCity {
 	private CityRepository cityRepository;
 	private RegisterNewCityRulesValidator registerNewCityRulesValidator;
 
-	@Autowired
 	public RegisterNewCityImpl(final CityRepository cityRepository,
-			final RegisterNewCityRulesValidator registerNewCityRulesValidator) {
+							   final RegisterNewCityRulesValidator registerNewCityRulesValidator) {
 		this.cityRepository = cityRepository;
 		this.registerNewCityRulesValidator = registerNewCityRulesValidator;
 	}
@@ -37,16 +35,6 @@ public final class RegisterNewCityImpl implements RegisterNewCity {
 
 		cityRepository.save(cityEntity);
 
-		// Notificar al administrador sobre la creación de la nueva ciudad
-		// : ¿Cómo? Notification Building Block
-
-		// Tenga en cuenta que:
-		// 1. El correo del administrador está en un lugar parametrizado (Parameters
-		// Building Block)
-		// 2. El asunto del correo está en un lugar parametrizado (Parameters Building
-		// Block)
-		// 3. El cuerpo del correo está en un lugar parametrizado (Parameters Building
-		// Block)
 	}
 
 }

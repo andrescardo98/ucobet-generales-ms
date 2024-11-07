@@ -20,12 +20,12 @@ public final class RegisterNewCityIdRulesValidatorImpl implements RegisterNewCit
 
 	@Override
 	public void validate(CityDomain data) {
+		data.generateId();
 		try {
-			data.generateId();
 			cityIdDoesNotExistRule.validate(data.getId());
 		} catch (final CityIdDoesExistException exception) {
 			validate(data);
 		}
 	}
-	
+
 }

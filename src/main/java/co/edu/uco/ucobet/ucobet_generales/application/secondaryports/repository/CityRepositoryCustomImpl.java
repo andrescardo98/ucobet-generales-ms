@@ -69,14 +69,14 @@ public class CityRepositoryCustomImpl implements CityRepositoryCustom {
 		}
 	}
 
-	public boolean existsByNameAndState(String name, String state) {
+	public boolean existsByName(String name) {
 		try {
 			var criteriaBuilder = entityManager.getCriteriaBuilder();
 			var query = criteriaBuilder.createQuery(Long.class);
 			var root = query.from(CityEntity.class);
 
-			query.select(criteriaBuilder.count(root)).where(criteriaBuilder.and(
-					criteriaBuilder.equal(root.get("name"), name), criteriaBuilder.equal(root.get("state"), state)));
+			query.select(criteriaBuilder.count(root))
+					.where(criteriaBuilder.equal(criteriaBuilder.lower(root.get("name")), name.toLowerCase()));
 
 			Long count = entityManager.createQuery(query).getSingleResult();
 

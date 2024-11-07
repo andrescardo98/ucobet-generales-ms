@@ -9,16 +9,16 @@ import co.edu.uco.ucobet.ucobet_generales.domain.country.CountryDomain;
 
 @Mapper
 public interface CountryEntityMapper {
-	
+
 	CountryEntityMapper INSTANCE = Mappers.getMapper(CountryEntityMapper.class );
-	
-	CountryEntity toEntity(CountryDomain cityDomain);
-	
-	CountryDomain toDomain(CountryEntity cityEntity);
-	
+
+	CountryEntity toEntity(CountryDomain countryDomain);
+
+	CountryDomain toDomain(CountryEntity countryEntity);
+
 	List<CountryEntity> toEntityList(List<CountryDomain> domainList);
-	
+
 	List<CountryDomain> toDomainList(List<CountryEntity> entityList);
-	
+
 
 }
